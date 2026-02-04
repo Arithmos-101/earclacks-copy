@@ -1,6 +1,6 @@
 extends Node2D
 
-signal paused(paused : bool)
+signal paused(set_paused : bool)
 
 @export var clack_ball_spawn_1 : Marker2D
 @export var clack_ball_spawn_2 : Marker2D
@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 func pause():
 	emit_signal("paused", !is_paused)
 
-func _on_paused(paused: bool) -> void:
+func _on_paused(set_paused: bool) -> void:
 	for ball in balls:
-		ball.pause(paused)
+		ball.pause(set_paused)
 	is_paused = !is_paused

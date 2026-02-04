@@ -12,10 +12,10 @@ clack_ball_spawn_2 = NodePath("ClackBallSpawnRight")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2100473969]
 polygon = PackedVector2Array(326, 74, 325, 0, 1152, 0, 1151, 648, 0, 648, 0, 0, 325, 0, 326, 74, 326, 574, 826, 574, 827, 74)
 
-[node name="ClackBallSpawnLeft" type="Node2D" parent="." unique_id=1835278905]
+[node name="ClackBallSpawnLeft" type="Marker2D" parent="." unique_id=1038829615]
 position = Vector2(426, 324)
 
-[node name="ClackBallSpawnRight" type="Node2D" parent="." unique_id=23395041]
+[node name="ClackBallSpawnRight" type="Marker2D" parent="." unique_id=826695260]
 position = Vector2(726, 324)
 
 [node name="Background" type="ColorRect" parent="." unique_id=139885115]

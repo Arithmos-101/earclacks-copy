@@ -21,7 +21,7 @@ func _ready() -> void:
 	angular_velocity = spin_speed
 	
 func _to_component_vector(magnitude : float, angle : float):
-	return Vector2(launch_speed * cos(deg_to_rad(angle)), launch_speed * sin(deg_to_rad(angle)))
+	return Vector2(magnitude * cos(deg_to_rad(angle)), magnitude * sin(deg_to_rad(angle)))
 	
 func pause(paused : bool) -> void:
 	if paused:
