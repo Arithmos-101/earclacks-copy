@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bd335a3p1g7q3"]
+
+[ext_resource type="Script" uid="uid://dv1dq8g0vdp5s" path="res://Clack Ball/clack_ball.gd" id="1_owm8m"]
+[ext_resource type="Script" uid="uid://owxvkt1he2l0" path="res://Clack Ball/clack_ball_mesh.gd" id="2_e56jn"]
+[ext_resource type="Script" uid="uid://cssdo7gk4hqti" path="res://Clack Ball/clack_ball_collision.gd" id="3_an1ui"]
+[ext_resource type="Script" uid="uid://rhc5tv0s0xnj" path="res://Clack Ball/clack_ball_hurt_area.gd" id="4_74gkj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_an1ui"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_26byw"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_26byw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_owm8m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yljrg"]
+
+[node name="ClackBall" type="RigidBody2D" unique_id=1530982550 node_paths=PackedStringArray("clack_ball_mesh", "clack_ball_collision")]
+physics_material_override = SubResource("PhysicsMaterial_an1ui")
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_owm8m")
+ball_radius = 10.0
+clack_ball_mesh = NodePath("ClackBallMesh")
+clack_ball_collision = NodePath("ClackBallCollision")
+
+[node name="ClackBallMesh" type="MeshInstance2D" parent="." unique_id=824374591]
+mesh = SubResource("SphereMesh_26byw")
+texture = SubResource("PlaceholderTexture2D_26byw")
+script = ExtResource("2_e56jn")
+
+[node name="ClackBallCollision" type="CollisionShape2D" parent="." unique_id=1340370392]
+shape = SubResource("CircleShape2D_owm8m")
+script = ExtResource("3_an1ui")
+
+[node name="ClackBallHurtArea" type="Area2D" parent="." unique_id=1182539274]
+monitorable = false
+script = ExtResource("4_74gkj")
+
+[node name="ClackBallHurtBox" type="CollisionShape2D" parent="ClackBallHurtArea" unique_id=1832673209]
+shape = SubResource("CircleShape2D_yljrg")

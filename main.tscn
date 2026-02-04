@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://daa18owpdujr7"]
 
+[ext_resource type="PackedScene" uid="uid://bd335a3p1g7q3" path="res://Clack Ball/clack_ball.tscn" id="1_ig7tw"]
+
 [node name="Main" type="Node2D" unique_id=274504449]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=958094948]
@@ -42,3 +44,6 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.93845, 0.93844956, 0.9384497, 1)
+
+[node name="ClackBall" parent="." unique_id=2143039115 instance=ExtResource("1_ig7tw")]
+position = Vector2(570, 195)
