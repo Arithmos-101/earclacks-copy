@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://daa18owpdujr7"]
+
+[node name="Main" type="Node2D" unique_id=274504449]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=958094948]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2100473969]
+build_mode = 1
+polygon = PackedVector2Array(326, 74, 325, 0, 1152, 0, 1151, 648, 0, 648, 0, 0, 325, 0, 326, 74, 326, 574, 826, 574, 827, 74)
+
+[node name="Background" type="ColorRect" parent="." unique_id=139885115]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.8209507, 0.77563864, 0.7309319, 1)
+
+[node name="Outline" type="ColorRect" parent="Background" unique_id=1933634401]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -255.0
+offset_right = 255.0
+offset_bottom = 255.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ActiveArea" type="ColorRect" parent="Background/Outline" unique_id=986481405]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.93845, 0.93844956, 0.9384497, 1)
