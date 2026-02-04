@@ -19,14 +19,15 @@ height = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yljrg"]
 
-[node name="ClackBall" type="RigidBody2D" unique_id=1530982550 node_paths=PackedStringArray("clack_ball_mesh", "clack_ball_collision")]
+[node name="ClackBall" type="RigidBody2D" unique_id=1530982550 node_paths=PackedStringArray("clack_ball_mesh", "clack_ball_collision", "clack_ball_hurt_area")]
+process_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_an1ui")
 linear_damp_mode = 1
 angular_damp_mode = 1
 script = ExtResource("1_owm8m")
-ball_radius = 10.0
 clack_ball_mesh = NodePath("ClackBallMesh")
 clack_ball_collision = NodePath("ClackBallCollision")
+clack_ball_hurt_area = NodePath("ClackBallHurtArea")
 
 [node name="ClackBallMesh" type="MeshInstance2D" parent="." unique_id=824374591]
 mesh = SubResource("SphereMesh_26byw")
@@ -37,9 +38,10 @@ script = ExtResource("2_e56jn")
 shape = SubResource("CircleShape2D_owm8m")
 script = ExtResource("3_an1ui")
 
-[node name="ClackBallHurtArea" type="Area2D" parent="." unique_id=1182539274]
+[node name="ClackBallHurtArea" type="Area2D" parent="." unique_id=1182539274 node_paths=PackedStringArray("clack_ball_hurt_box")]
 monitorable = false
 script = ExtResource("4_74gkj")
+clack_ball_hurt_box = NodePath("ClackBallHurtBox")
 
 [node name="ClackBallHurtBox" type="CollisionShape2D" parent="ClackBallHurtArea" unique_id=1832673209]
 shape = SubResource("CircleShape2D_yljrg")
