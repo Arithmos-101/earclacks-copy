@@ -1,14 +1,22 @@
 [gd_scene format=3 uid="uid://daa18owpdujr7"]
 
-[ext_resource type="PackedScene" uid="uid://bd335a3p1g7q3" path="res://Clack Ball/clack_ball.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://k27aj6ajmyec" path="res://VsArena.gd" id="1_ig7tw"]
 
-[node name="Main" type="Node2D" unique_id=274504449]
+[node name="VsArena" type="Node2D" unique_id=274504449 node_paths=PackedStringArray("clack_ball_spawn_1", "clack_ball_spawn_2")]
+script = ExtResource("1_ig7tw")
+clack_ball_spawn_1 = NodePath("ClackBallSpawn1")
+clack_ball_spawn_2 = NodePath("ClackBallSpawn2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=958094948]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2100473969]
-build_mode = 1
 polygon = PackedVector2Array(326, 74, 325, 0, 1152, 0, 1151, 648, 0, 648, 0, 0, 325, 0, 326, 74, 326, 574, 826, 574, 827, 74)
+
+[node name="ClackBallSpawn1" type="Node2D" parent="." unique_id=1019342724]
+position = Vector2(426, 174)
+
+[node name="ClackBallSpawn2" type="Node2D" parent="." unique_id=1311058075]
+position = Vector2(726, 174)
 
 [node name="Background" type="ColorRect" parent="." unique_id=139885115]
 offset_right = 1152.0
@@ -44,6 +52,3 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.93845, 0.93844956, 0.9384497, 1)
-
-[node name="ClackBall" parent="." unique_id=2143039115 instance=ExtResource("1_ig7tw")]
-position = Vector2(570, 195)
