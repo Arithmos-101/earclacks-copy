@@ -2,8 +2,8 @@ extends Node2D
 
 signal paused(paused : bool)
 
-@export var clack_ball_spawn_1 : Node2D
-@export var clack_ball_spawn_2 : Node2D
+@export var clack_ball_spawn_1 : Marker2D
+@export var clack_ball_spawn_2 : Marker2D
 
 var default_clack_ball = preload("res://Clack Ball/clack_ball.tscn")
 var balls : Array[ClackBall]
