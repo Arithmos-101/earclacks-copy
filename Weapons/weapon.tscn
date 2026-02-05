@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dgfm27qrtxyjc" path="res://hit_box_area.gd" id="2_2ue5o"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0jw1c"]
+radius = 5.0
+height = 10.0
 
 [node name="Weapon" type="Node2D" unique_id=684287475 node_paths=PackedStringArray("clack_ball_anchor", "weapon_mesh", "hit_box_area")]
 script = ExtResource("1_0jw1c")
@@ -14,6 +16,8 @@ hit_box_area = NodePath("HitBoxArea")
 [node name="Anchor" type="Marker2D" parent="." unique_id=1139929940]
 
 [node name="WeaponMesh" type="MeshInstance2D" parent="." unique_id=973367880]
+modulate = Color(1, 1, 0, 1)
+z_index = -1
 position = Vector2(0, -12.249999)
 scale = Vector2(4.5, 12.250001)
 mesh = SubResource("CapsuleMesh_0jw1c")
