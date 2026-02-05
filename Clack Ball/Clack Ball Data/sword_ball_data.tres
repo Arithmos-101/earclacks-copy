@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ClackBallData" format=3 uid="uid://wkh7rm3jpj7r"]
+
+[ext_resource type="Script" uid="uid://dauvgqwgh8xq" path="res://Clack Ball/Clack Ball Data/clack_ball_data.gd" id="1_3fpnb"]
+[ext_resource type="PackedScene" uid="uid://bf8uq4hycka4k" path="res://Weapons/Weapon Variants/sword.tscn" id="2_dpeup"]
+
+[resource]
+script = ExtResource("1_3fpnb")
+ball_radius = 50.0
+weapon = ExtResource("2_dpeup")
+metadata/_custom_type_script = "uid://dauvgqwgh8xq"

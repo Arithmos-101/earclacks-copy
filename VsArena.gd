@@ -14,12 +14,17 @@ func _ready() -> void:
 	pause()
 	
 func _spawn_balls() -> void:
-	var spawns = [clack_ball_spawn_1, clack_ball_spawn_2]
-	var clack_balls = [default_clack_ball.instantiate(), default_clack_ball.instantiate()]
-	for i in spawns.size():
-		clack_balls[i].position = spawns[i].position
-		add_child(clack_balls[i])
-		balls.append(clack_balls[i])
+	var clack_ball = default_clack_ball.instantiate()
+	clack_ball.position = clack_ball_spawn_1.position
+	clack_ball.data = load("res://Clack Ball/Clack Ball Data/default_ball_data.tres").duplicate()
+	add_child(clack_ball)
+	balls.append(clack_ball)
+	
+	clack_ball = default_clack_ball.instantiate()
+	clack_ball.position = clack_ball_spawn_2.position
+	clack_ball.data = load("res://Clack Ball/Clack Ball Data/sword_ball_data.tres").duplicate()
+	add_child(clack_ball)
+	balls.append(clack_ball)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("space"):
