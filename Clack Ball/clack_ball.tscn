@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dv1dq8g0vdp5s" path="res://Clack Ball/clack_ball.gd" id="1_owm8m"]
 [ext_resource type="Script" uid="uid://owxvkt1he2l0" path="res://Clack Ball/clack_ball_mesh.gd" id="2_e56jn"]
+[ext_resource type="Resource" uid="uid://bsay65h0qlo45" path="res://Clack Ball/Clack Ball Data/default_ball_data.tres" id="2_yljrg"]
 [ext_resource type="Script" uid="uid://cssdo7gk4hqti" path="res://Clack Ball/clack_ball_collision.gd" id="3_an1ui"]
 [ext_resource type="Script" uid="uid://rhc5tv0s0xnj" path="res://Clack Ball/clack_ball_hurt_area.gd" id="4_74gkj"]
 
@@ -10,14 +11,16 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_26byw"]
-radius = 10.0
-height = 20.0
+radius = 30.0
+height = 60.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_26byw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_owm8m"]
+radius = 30.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yljrg"]
+radius = 30.0
 
 [node name="ClackBall" type="RigidBody2D" unique_id=1530982550 node_paths=PackedStringArray("clack_ball_mesh", "clack_ball_collision", "clack_ball_hurt_area")]
 process_mode = 1
@@ -25,6 +28,7 @@ physics_material_override = SubResource("PhysicsMaterial_an1ui")
 linear_damp_mode = 1
 angular_damp_mode = 1
 script = ExtResource("1_owm8m")
+clack_ball_data = ExtResource("2_yljrg")
 clack_ball_mesh = NodePath("ClackBallMesh")
 clack_ball_collision = NodePath("ClackBallCollision")
 clack_ball_hurt_area = NodePath("ClackBallHurtArea")
@@ -45,3 +49,25 @@ clack_ball_hurt_box = NodePath("ClackBallHurtBox")
 
 [node name="ClackBallHurtBox" type="CollisionShape2D" parent="ClackBallHurtArea" unique_id=1832673209]
 shape = SubResource("CircleShape2D_yljrg")
+
+[node name="HealthText" type="RichTextLabel" parent="." unique_id=1825784367]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -11.5
+offset_right = 15.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[b]100"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

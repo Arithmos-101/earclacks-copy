@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" uid="uid://k27aj6ajmyec" path="res://VsArena.gd" id="1_ig7tw"]
 
-[node name="VsArena" type="Node2D" unique_id=274504449 node_paths=PackedStringArray("clack_ball_spawn_1", "clack_ball_spawn_2")]
+[node name="VsArena" type="Control" unique_id=73105158 node_paths=PackedStringArray("clack_ball_spawn_1", "clack_ball_spawn_2")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ig7tw")
 clack_ball_spawn_1 = NodePath("ClackBallSpawnLeft")
 clack_ball_spawn_2 = NodePath("ClackBallSpawnRight")
@@ -19,6 +25,7 @@ position = Vector2(426, 324)
 position = Vector2(726, 324)
 
 [node name="Background" type="ColorRect" parent="." unique_id=139885115]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.8209507, 0.77563864, 0.7309319, 1)

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 signal paused(set_paused : bool)
 
