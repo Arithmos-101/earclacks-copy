@@ -4,26 +4,26 @@
 [ext_resource type="Script" uid="uid://dgfm27qrtxyjc" path="res://hit_box_area.gd" id="2_2ue5o"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0jw1c"]
-radius = 5.0
-height = 10.0
+resource_local_to_scene = true
 
-[node name="Weapon" type="Node2D" unique_id=684287475 node_paths=PackedStringArray("clack_ball_anchor", "weapon_mesh", "hit_box_area")]
+[node name="Weapon" type="Node2D" unique_id=684287475 node_paths=PackedStringArray("weapon_mesh", "hit_box_area")]
 script = ExtResource("1_0jw1c")
-clack_ball_anchor = NodePath("Anchor")
 weapon_mesh = NodePath("WeaponMesh")
 hit_box_area = NodePath("HitBoxArea")
-
-[node name="Anchor" type="Marker2D" parent="." unique_id=1139929940]
+initial_damage = null
 
 [node name="WeaponMesh" type="MeshInstance2D" parent="." unique_id=973367880]
 modulate = Color(1, 1, 0, 1)
 z_index = -1
-position = Vector2(0, -12.249999)
-scale = Vector2(4.5, 12.250001)
 mesh = SubResource("CapsuleMesh_0jw1c")
 
 [node name="HitBoxArea" type="Area2D" parent="." unique_id=1849890247]
 script = ExtResource("2_2ue5o")
 
 [node name="HitBox" type="CollisionPolygon2D" parent="HitBoxArea" unique_id=147978137]
-polygon = PackedVector2Array(0, 0, 2, 0, 2, -21, 1, -24, 0, -25, -1, -24, -2, -21, -2, 0)
+scale = Vector2(0.1875, 1)
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="WeaponModifer" type="Node" parent="." unique_id=1273324694]
+
+[connection signal="area_entered" from="HitBoxArea" to="." method="_on_hit_box_area_area_entered"]

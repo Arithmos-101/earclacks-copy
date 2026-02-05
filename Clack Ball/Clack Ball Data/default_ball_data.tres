@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="ClackBallData" format=3 uid="uid://bsay65h0qlo45"]
 
 [ext_resource type="Script" uid="uid://dauvgqwgh8xq" path="res://Clack Ball/Clack Ball Data/clack_ball_data.gd" id="1_lwu21"]
+[ext_resource type="PackedScene" uid="uid://ciie81c2b30mg" path="res://Weapons/weapon.tscn" id="2_ujya2"]
 
 [resource]
 script = ExtResource("1_lwu21")
+weapon = ExtResource("2_ujya2")
 metadata/_custom_type_script = "uid://dauvgqwgh8xq"

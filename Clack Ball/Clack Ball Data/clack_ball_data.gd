@@ -9,4 +9,4 @@ class_name ClackBallData
 
 @export_group("Weapon Data")
 @export var weapon : PackedScene
-@export var attack_speed := 5.0
+@export var initial_attack_speed := 5.0

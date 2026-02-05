@@ -7,5 +7,4 @@
 script = ExtResource("1_3fpnb")
 ball_radius = 40.0
 weapon = ExtResource("2_dpeup")
-weapon_distance = 10.0
 metadata/_custom_type_script = "uid://dauvgqwgh8xq"

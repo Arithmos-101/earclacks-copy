@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://bf8uq4hycka4k"]
 
 [ext_resource type="PackedScene" uid="uid://ciie81c2b30mg" path="res://Weapons/weapon.tscn" id="1_twva4"]
+[ext_resource type="Script" uid="uid://c450ybe8kj5y1" path="res://Weapons/Weapon Modifer/weapon_modifer.gd" id="2_np7vs"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_twva4"]
+resource_local_to_scene = true
+radius = 20.0
+height = 120.0
 
 [node name="Weapon" unique_id=684287475 instance=ExtResource("1_twva4")]
+initial_damage = 1
 
-[node name="WeaponMesh" parent="." index="1" unique_id=973367880]
+[node name="WeaponMesh" parent="." index="0" unique_id=973367880]
 modulate = Color(0.57925385, 1.973361e-06, 3.85046e-07, 1)
+position = Vector2(0, -12)
+mesh = SubResource("CapsuleMesh_twva4")
 
 [node name="HitBox" parent="HitBoxArea" parent_id_path=PackedInt32Array(1849890247) index="0" unique_id=147978137]
-position = Vector2(2, 1)
-polygon = PackedVector2Array(-10, 43, -1, 48, 9, 42, 19, 20, 21, -15, 18, -43, 11, -63, 2, -74, -6, -74, -15, -63, -21, -44, -25, -16, -21, 20)
+polygon = PackedVector2Array(-58.666668, 44, -1, 48, 64, 44, 106.66667, 31, 106.66667, -15, 106.66667, -55, 69.333336, -68, 5, -72, -8, -72, -64, -68, -106.66667, -57, -106.66667, -15, -106.66667, 32)
+
+[node name="WeaponModifer" parent="." index="2" unique_id=1273324694]
+script = ExtResource("2_np7vs")
+
+[connection signal="body_entered" from="HitBoxArea" to="." method="_on_hit_box_area_body_entered"]
