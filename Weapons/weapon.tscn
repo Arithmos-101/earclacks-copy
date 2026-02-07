@@ -6,11 +6,11 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0jw1c"]
 resource_local_to_scene = true
 
-[node name="Weapon" type="Node2D" unique_id=684287475 node_paths=PackedStringArray("weapon_mesh", "hit_box_area")]
+[node name="Weapon" type="Node2D" unique_id=684287475 node_paths=PackedStringArray("clack_cooldown_timer", "weapon_mesh", "hit_box_area")]
 script = ExtResource("1_0jw1c")
+clack_cooldown_timer = NodePath("ClackCooldown")
 weapon_mesh = NodePath("WeaponMesh")
 hit_box_area = NodePath("HitBoxArea")
-initial_damage = null
 
 [node name="WeaponMesh" type="MeshInstance2D" parent="." unique_id=973367880]
 modulate = Color(1, 1, 0, 1)
@@ -25,5 +25,8 @@ scale = Vector2(0.1875, 1)
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="WeaponModifer" type="Node" parent="." unique_id=1273324694]
+
+[node name="ClackCooldown" type="Timer" parent="." unique_id=301737068]
+one_shot = true
 
 [connection signal="area_entered" from="HitBoxArea" to="." method="_on_hit_box_area_area_entered"]

@@ -3,21 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://ciie81c2b30mg" path="res://Weapons/weapon.tscn" id="1_twva4"]
 [ext_resource type="Script" uid="uid://c450ybe8kj5y1" path="res://Weapons/Weapon Modifer/weapon_modifer.gd" id="2_np7vs"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_twva4"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_np7vs"]
 resource_local_to_scene = true
 radius = 20.0
 height = 120.0
 
-[node name="Weapon" unique_id=684287475 instance=ExtResource("1_twva4")]
-initial_damage = 1
+[node name="Sword" unique_id=684287475 instance=ExtResource("1_twva4")]
 
 [node name="WeaponMesh" parent="." index="0" unique_id=973367880]
 modulate = Color(0.57925385, 1.973361e-06, 3.85046e-07, 1)
 position = Vector2(0, -12)
-mesh = SubResource("CapsuleMesh_twva4")
+mesh = SubResource("CapsuleMesh_np7vs")
 
 [node name="HitBox" parent="HitBoxArea" parent_id_path=PackedInt32Array(1849890247) index="0" unique_id=147978137]
-polygon = PackedVector2Array(-58.666668, 44, -1, 48, 64, 44, 106.66667, 31, 106.66667, -15, 106.66667, -55, 69.333336, -68, 5, -72, -8, -72, -64, -68, -106.66667, -57, -106.66667, -15, -106.66667, 32)
+polygon = PackedVector2Array(-58.666668, 0, 0, 0, 58.666668, 0, 101.333336, 0, 106.66667, -15, 106.66667, -55, 69.333336, -68, 5, -72, -8, -72, -64, -68, -106.66667, -57, -106.66667, -15, -106.66667, 0)
 
 [node name="WeaponModifer" parent="." index="2" unique_id=1273324694]
 script = ExtResource("2_np7vs")

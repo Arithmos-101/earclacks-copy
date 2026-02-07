@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cty7uqjjyoiwa"]
+
+[ext_resource type="PackedScene" uid="uid://ciie81c2b30mg" path="res://Weapons/weapon.tscn" id="1_fees6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fees6"]
+resource_local_to_scene = true
+radius = 8.0
+height = 60.0
+
+[node name="Dagger" unique_id=684287475 instance=ExtResource("1_fees6")]
+
+[node name="WeaponMesh" parent="." index="0" unique_id=973367880]
+position = Vector2(0, -21)
+mesh = SubResource("CapsuleMesh_fees6")
+
+[node name="HitBox" parent="HitBoxArea" parent_id_path=PackedInt32Array(1849890247) index="0" unique_id=147978137]
+polygon = PackedVector2Array(0, 0, -42.666668, 0, -42.666668, -45, -26.666668, -49, 0, -51, 26.666668, -49, 42.666668, -45, 42.666668, 0)

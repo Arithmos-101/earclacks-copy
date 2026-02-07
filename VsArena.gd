@@ -16,7 +16,7 @@ func _ready() -> void:
 func _spawn_balls() -> void:
 	var clack_ball = default_clack_ball.instantiate()
 	clack_ball.position = clack_ball_spawn_1.position
-	clack_ball.data = load("res://Clack Ball/Clack Ball Data/default_ball_data.tres").duplicate()
+	clack_ball.data = load("res://Clack Ball/Clack Ball Data/dagger_ball_data.tres").duplicate()
 	add_child(clack_ball)
 	balls.append(clack_ball)
 	

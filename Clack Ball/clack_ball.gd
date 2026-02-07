@@ -34,6 +34,12 @@ func pause(paused : bool) -> void:
 	else:
 		process_mode = Node.PROCESS_MODE_ALWAYS
 
+func on_clank() -> void:
+	print("before ", angular_velocity)
+	print("expected ", -data.initial_attack_speed * (angular_velocity/abs(angular_velocity)))
+	angular_velocity = -data.initial_attack_speed * (angular_velocity/abs(angular_velocity))
+	print("current ", angular_velocity)
+	
 func damage(value : int) -> void:
 	health -= value
 	health_text.text = "[b]" + str(health)
