@@ -8,5 +8,5 @@ script = ExtResource("1_5hj4o")
 name = "Dagger"
 ball_radius = 25.0
 weapon = ExtResource("2_5hj4o")
-initial_attack_speed = 100.0
+attack_speed = 10.0
 metadata/_custom_type_script = "uid://dauvgqwgh8xq"

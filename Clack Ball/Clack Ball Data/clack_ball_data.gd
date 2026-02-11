@@ -9,8 +9,8 @@ class_name ClackBallData
 @export var weight := 1.0
 @export var gravity := 1.0
 @export var launch_speed := 200.0
-@export var initial_health := 100
+@export var health := 100
 
 @export_group("Weapon Data")
 @export var weapon : PackedScene
-@export var initial_attack_speed := 5.0
+@export var attack_speed := 5.0

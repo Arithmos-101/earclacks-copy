@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://daa18owpdujr7"]
 
 [ext_resource type="Script" uid="uid://k27aj6ajmyec" path="res://VsArena.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://capd0js3okmrd" path="res://stats_label.gd" id="2_0xm2m"]
 
-[node name="VsArena" type="Control" unique_id=73105158 node_paths=PackedStringArray("clack_ball_spawn_1", "clack_ball_spawn_2", "vs_label")]
+[node name="VsArena" type="Control" unique_id=73105158 node_paths=PackedStringArray("clack_ball_spawn_1", "clack_ball_spawn_2", "vs_label", "left_stat_label", "right_stat_label")]
 z_index = -10
 layout_mode = 3
 anchors_preset = 15
@@ -14,6 +15,8 @@ script = ExtResource("1_ig7tw")
 clack_ball_spawn_1 = NodePath("ClackBallSpawnLeft")
 clack_ball_spawn_2 = NodePath("ClackBallSpawnRight")
 vs_label = NodePath("Background/VsLabel")
+left_stat_label = NodePath("Background/LeftStatsLabel")
+right_stat_label = NodePath("Background/RightStatsLabel")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=958094948]
 
@@ -39,7 +42,7 @@ offset_right = 828.0
 offset_bottom = 71.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "Clackball Vs Clackball"
+text = "Clackball vs Clackball"
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -73,5 +76,28 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.93845, 0.93844956, 0.9384497, 1)
+
+[node name="LeftStatsLabel" type="RichTextLabel" parent="Background" unique_id=1871763070]
+layout_mode = 0
+offset_right = 322.0
+offset_bottom = 647.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Left Clackball stats:"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_0xm2m")
+metadata/_custom_type_script = "uid://capd0js3okmrd"
+
+[node name="RightStatsLabel" type="RichTextLabel" parent="Background" unique_id=263482942]
+layout_mode = 0
+offset_left = 830.0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Right Clackball stats:"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_0xm2m")
+metadata/_custom_type_script = "uid://capd0js3okmrd"
 
 [connection signal="paused" from="." to="." method="_on_paused"]

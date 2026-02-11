@@ -1,6 +1,9 @@
 extends RigidBody2D
 class_name ClackBall
 
+signal stats_changed(ball_name : String, ball_radius : float, ball_weight : float,
+	ball_gravity : float, attack_speed : float)
+
 @export var data : ClackBallData 
 
 @export var mesh : MeshInstance2D
@@ -8,18 +11,15 @@ class_name ClackBall
 @export var hurt_area : ClackBallHurtArea
 @export var health_text : RichTextLabel
 
-var health : int
-
 var weapon : Node2D
 
 func _ready() -> void:
 	mesh.set_size(data.ball_radius)
 	collision.set_size(data.ball_radius)
 	hurt_area.set_size(data.ball_radius)
-	
-	health = data.initial_health
+
 	linear_velocity = _to_component_vector(data.launch_speed, 360 * randf())
-	angular_velocity = data.initial_attack_speed
+	angular_velocity = data.attack_speed
 	
 	weapon = data.weapon.instantiate()
 	weapon.position.y = -data.ball_radius
@@ -35,18 +35,23 @@ func pause(paused : bool) -> void:
 		process_mode = Node.PROCESS_MODE_ALWAYS
 
 func on_clank() -> void:
-	print("before ", angular_velocity)
-	print("expected ", -data.initial_attack_speed * (angular_velocity/abs(angular_velocity)))
-	angular_velocity = -data.initial_attack_speed * (angular_velocity/abs(angular_velocity))
-	print("current ", angular_velocity)
+	angular_velocity = -data.attack_speed * (angular_velocity/abs(angular_velocity))
 	
 func damage(value : int) -> void:
-	health -= value
-	health_text.text = "[b]" + str(health)
+	data.health -= value
+	health_text.text = "[b]" + str(data.health)
 
 func _on_clack_ball_hurt_area_area_entered(area: Area2D) -> void:
 	if area is HitBoxArea and area != weapon.hit_box_area:
 		damage(area.get_damage())
+
+func set_stats(ball_name : String, ball_radius : float, ball_weight : float,
+	ball_gravity : float, attack_speed : float) -> void:
+		data.name = ball_name
+		data.ball_radius = ball_radius
+		data.weight = ball_weight
+		data.gravity = ball_gravity
+		data.attack_speed = attack_speed
 
 func get_ball_name() -> String:
 	return data.name
