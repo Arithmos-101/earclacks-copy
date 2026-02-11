@@ -4,6 +4,7 @@ signal paused(set_paused : bool)
 
 @export var clack_ball_spawn_1 : Marker2D
 @export var clack_ball_spawn_2 : Marker2D
+@export var vs_text : RichTextLabel
 
 var default_clack_ball = preload("res://Clack Ball/clack_ball.tscn")
 var balls : Array[ClackBall]
