@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://k27aj6ajmyec" path="res://VsArena.gd" id="1_ig7tw"]
 
-[node name="VsArena" type="Control" unique_id=73105158 node_paths=PackedStringArray("clack_ball_spawn_1", "clack_ball_spawn_2")]
+[node name="VsArena" type="Control" unique_id=73105158 node_paths=PackedStringArray("clack_ball_spawn_1", "clack_ball_spawn_2", "vs_label")]
 z_index = -10
 layout_mode = 3
 anchors_preset = 15
@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_ig7tw")
 clack_ball_spawn_1 = NodePath("ClackBallSpawnLeft")
 clack_ball_spawn_2 = NodePath("ClackBallSpawnRight")
+vs_label = NodePath("Background/VsLabel")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=958094948]
 
@@ -31,7 +32,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.8209507, 0.77563864, 0.7309319, 1)
 
-[node name="VsText" type="RichTextLabel" parent="Background" unique_id=1439613213]
+[node name="VsLabel" type="RichTextLabel" parent="Background" unique_id=1439613213]
 layout_mode = 0
 offset_left = 322.0
 offset_right = 828.0

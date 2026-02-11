@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_3fpnb")
+name = "Sword"
 ball_radius = 40.0
 weapon = ExtResource("2_dpeup")
 metadata/_custom_type_script = "uid://dauvgqwgh8xq"

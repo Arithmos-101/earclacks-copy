@@ -1,6 +1,10 @@
 extends Resource
 class_name ClackBallData
 
+@export_group("Ball info")
+@export var name : String
+
+@export_group("Ball Stats")
 @export var ball_radius := 30.0
 @export var weight := 1.0
 @export var gravity := 1.0

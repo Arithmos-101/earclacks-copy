@@ -47,3 +47,6 @@ func damage(value : int) -> void:
 func _on_clack_ball_hurt_area_area_entered(area: Area2D) -> void:
 	if area is HitBoxArea and area != weapon.hit_box_area:
 		damage(area.get_damage())
+
+func get_ball_name() -> String:
+	return data.name
