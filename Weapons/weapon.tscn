@@ -24,7 +24,7 @@ script = ExtResource("2_2ue5o")
 scale = Vector2(0.1875, 1)
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 
-[node name="WeaponModifer" type="Node" parent="." unique_id=1273324694]
+[node name="WeaponModifier" type="Node" parent="." unique_id=1273324694]
 
 [node name="ClackCooldown" type="Timer" parent="." unique_id=301737068]
 one_shot = true

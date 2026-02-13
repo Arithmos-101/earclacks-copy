@@ -8,10 +8,7 @@ class_name Weapon
 @export var clack_cooldown := 0.1
 @export var weapon_mesh : MeshInstance2D
 @export var hit_box_area : Area2D
-@export var initial_damage := 1
-@export var weapon_modifer : WeaponModifer
-
-var damage = initial_damage
+@export var weapon_modifer : WeaponModifier
 
 func _ready() -> void:
 	clack_cooldown_timer.wait_time = clack_cooldown
@@ -19,6 +16,7 @@ func _ready() -> void:
 func _on_hit_box_area_area_entered(area: Area2D) -> void:
 	if area is ClackBallHurtArea and area != get_parent().hurt_area:
 		if weapon_modifer:
+			await get_tree().process_frame
 			weapon_modifer.on_attack()
 	if area is HitBoxArea && clack_cooldown_timer.is_stopped():
 		area.on_clank()

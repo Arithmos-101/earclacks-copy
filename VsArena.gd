@@ -21,12 +21,14 @@ func _spawn_balls() -> void:
 	var clack_ball = default_clack_ball.instantiate()
 	clack_ball.position = clack_ball_spawn_1.position
 	clack_ball.data = load("res://Clack Ball/Clack Ball Data/dagger_ball_data.tres").duplicate()
+	clack_ball.stats_label = left_stat_label
 	add_child(clack_ball)
 	balls.append(clack_ball)
 	
 	clack_ball = default_clack_ball.instantiate()
 	clack_ball.position = clack_ball_spawn_2.position
 	clack_ball.data = load("res://Clack Ball/Clack Ball Data/sword_ball_data.tres").duplicate()
+	clack_ball.stats_label = right_stat_label
 	add_child(clack_ball)
 	balls.append(clack_ball)
 	

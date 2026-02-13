@@ -1,0 +1,50 @@
+{
+	"categories": [
+		{
+			"uuid": "6157937d-4e08-44a0-940b-8f61a54c0566",
+			"title": "Task",
+			"color": "569eff"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "47fdd9a1-b9d8-48fc-a805-83d11be16a1f",
+			"title": "Todo",
+			"tasks": [
+				"906b3eaf-c49b-4ca8-971a-c3b6821fbe63"
+			]
+		},
+		{
+			"uuid": "66152dcb-4926-4974-8e21-e90352c27f1d",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "de66576a-22f3-4a65-91c0-6ee3eb50156d",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "906b3eaf-c49b-4ca8-971a-c3b6821fbe63",
+			"title": "Fix attack speed increase",
+			"description": "When increasing dagger attack speed, actual speed does not change. Need to add forces/velocity to ball",
+			"category": "6157937d-4e08-44a0-940b-8f61a54c0566",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"47fdd9a1-b9d8-48fc-a805-83d11be16a1f"
+			],
+			[
+				"66152dcb-4926-4974-8e21-e90352c27f1d"
+			],
+			[
+				"de66576a-22f3-4a65-91c0-6ee3eb50156d"
+			]
+		]
+	}
+}

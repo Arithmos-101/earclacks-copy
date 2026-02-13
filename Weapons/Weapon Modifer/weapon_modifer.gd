@@ -1,5 +1,5 @@
 extends Node
-class_name WeaponModifer
+class_name WeaponModifier
 
 ## Hit something with weapon
 func on_attack():
