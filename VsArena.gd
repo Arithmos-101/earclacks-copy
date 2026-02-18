@@ -22,6 +22,7 @@ func _spawn_balls() -> void:
 	clack_ball.position = clack_ball_spawn_1.position
 	clack_ball.data = load("res://Clack Ball/Clack Ball Data/dagger_ball_data.tres").duplicate()
 	clack_ball.stats_label = left_stat_label
+	clack_ball.attacked.connect(on_attack)
 	add_child(clack_ball)
 	balls.append(clack_ball)
 	
@@ -29,6 +30,7 @@ func _spawn_balls() -> void:
 	clack_ball.position = clack_ball_spawn_2.position
 	clack_ball.data = load("res://Clack Ball/Clack Ball Data/sword_ball_data.tres").duplicate()
 	clack_ball.stats_label = right_stat_label
+	clack_ball.attacked.connect(on_attack)
 	add_child(clack_ball)
 	balls.append(clack_ball)
 	
@@ -45,3 +47,12 @@ func _on_paused(set_paused: bool) -> void:
 	for ball in balls:
 		ball.pause(set_paused)
 	is_paused = !is_paused
+
+func on_attack(freeze_time : float) -> void:
+	if freeze_time < 0.01:
+		return
+	for ball in balls:
+		ball.pause(true)
+	await get_tree().create_timer(freeze_time).timeout
+	for ball in balls:
+		ball.pause(false)

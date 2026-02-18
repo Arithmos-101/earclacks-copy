@@ -1,6 +1,7 @@
 extends RigidBody2D
 class_name ClackBall
 
+signal attacked(freeze_time : float)
 signal stats_changed(ball_data : ClackBallData)
 
 @export var data : ClackBallData 
@@ -25,6 +26,8 @@ func _ready() -> void:
 	weapon = data.weapon.instantiate()
 	weapon.position.y = -data.ball_radius
 	add_child(weapon)
+	weapon.clanked.connect(on_clank)
+	weapon.attacked.connect(on_attack)
 	
 	stats_changed.emit(data)
 	
@@ -40,12 +43,16 @@ func pause(paused : bool) -> void:
 func on_clank() -> void:
 	angular_velocity = -data.attack_speed * (angular_velocity/abs(angular_velocity))
 	
+func on_attack() -> void:
+	attacked.emit(data.hit_freeze)
+	
 func damage(value : int) -> void:
 	data.health -= value
 	health_text.text = "[b]" + str(data.health)
 
 func _on_clack_ball_hurt_area_area_entered(area: Area2D) -> void:
 	if area is HitBoxArea and area != weapon.hit_box_area:
+		print("here")
 		damage(area.get_damage())
 
 func set_radius(new_radius : float) -> void:
@@ -71,7 +78,6 @@ func set_damage(new_damage : int) -> void:
 
 func get_ball_name() -> String:
 	return data.name
-
 
 func _on_stats_changed(ball_data: ClackBallData) -> void:
 	if stats_label:

@@ -1,6 +1,9 @@
 extends Node2D
 class_name Weapon
 
+signal attacked
+signal clanked
+
 @export var clack_cooldown_timer : Timer
 # If you want to make this changable per clack ball, you need to
 # move the clack_cooldown_timer.is_stopped() out of the if statement
@@ -18,10 +21,11 @@ func _on_hit_box_area_area_entered(area: Area2D) -> void:
 		if weapon_modifer:
 			await get_tree().process_frame
 			weapon_modifer.on_attack()
+			attacked.emit()
 	if area is HitBoxArea && clack_cooldown_timer.is_stopped():
 		area.on_clank()
 		on_clank()
 
 func on_clank():
 	clack_cooldown_timer.start()
-	get_parent().on_clank()
+	clanked.emit()

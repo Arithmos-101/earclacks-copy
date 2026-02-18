@@ -9,4 +9,5 @@ name = "Sword"
 ball_radius = 35.0
 weapon = ExtResource("2_dpeup")
 attack_speed = 4.5
+hit_freeze = 0.3
 metadata/_custom_type_script = "uid://dauvgqwgh8xq"

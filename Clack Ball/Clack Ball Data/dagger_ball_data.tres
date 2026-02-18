@@ -9,4 +9,5 @@ name = "Dagger"
 ball_radius = 25.0
 weapon = ExtResource("2_5hj4o")
 attack_speed = 20.0
+hit_freeze = 0.02
 metadata/_custom_type_script = "uid://dauvgqwgh8xq"
