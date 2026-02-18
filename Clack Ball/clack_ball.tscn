@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://bsay65h0qlo45" path="res://Clack Ball/Clack Ball Data/default_ball_data.tres" id="2_yljrg"]
 [ext_resource type="Script" uid="uid://cssdo7gk4hqti" path="res://Clack Ball/clack_ball_collision.gd" id="3_an1ui"]
 [ext_resource type="Script" uid="uid://rhc5tv0s0xnj" path="res://Clack Ball/clack_ball_hurt_area.gd" id="4_74gkj"]
+[ext_resource type="Script" uid="uid://gkpqmyvd84q0" path="res://Clack Ball/health_text.gd" id="6_q8mhu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_an1ui"]
 friction = 0.0
@@ -55,6 +56,8 @@ clack_ball_hurt_box = NodePath("ClackBallHurtBox")
 shape = SubResource("CircleShape2D_yljrg")
 
 [node name="HealthText" type="RichTextLabel" parent="." unique_id=1825784367]
+top_level = true
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -75,6 +78,7 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_q8mhu")
 
 [connection signal="stats_changed" from="." to="." method="_on_stats_changed"]
 [connection signal="area_entered" from="ClackBallHurtArea" to="." method="_on_clack_ball_hurt_area_area_entered"]
