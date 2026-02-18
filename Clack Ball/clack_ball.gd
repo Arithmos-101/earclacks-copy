@@ -48,16 +48,6 @@ func _on_clack_ball_hurt_area_area_entered(area: Area2D) -> void:
 	if area is HitBoxArea and area != weapon.hit_box_area:
 		damage(area.get_damage())
 
-func set_stats(ball_name : String, ball_radius : float, ball_weight : float,
-	ball_gravity : float, attack_speed : float, damage : int) -> void:
-	data.name = ball_name
-	data.ball_radius = ball_radius
-	data.weight = ball_weight
-	data.gravity = ball_gravity
-	data.attack_speed = attack_speed
-	data.damage = damage
-	stats_changed.emit(data)
-
 func set_radius(new_radius : float) -> void:
 	data.ball_radius = new_radius
 	stats_changed.emit(data)
@@ -72,6 +62,7 @@ func set_gravity(new_gravity : float) -> void:
 	
 func set_attack_speed(new_attack_speed : float) -> void:
 	data.attack_speed = new_attack_speed
+	angular_velocity = data.attack_speed
 	stats_changed.emit(data)
 	
 func set_damage(new_damage : int) -> void:
